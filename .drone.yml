@@ -15,8 +15,6 @@ pipeline:
       event: [push, pull_request] # trigger step on push and pull events
   publish:
     image: plugins/docker
-    username: $DOCKER_USERNAME
-    password: $DOCKER_PASSWORD
     email: pwensel@gmail.com
     tag: latest
     file: Dockerfile
