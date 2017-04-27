@@ -29,6 +29,7 @@ pipeline:
     pull: true
     host: ${HOST}
     user: ${USER}
+    key: ${PLUGIN_KEY}
     port: 22
     pull: true
     command_timeout: 180
