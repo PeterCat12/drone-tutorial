@@ -26,6 +26,7 @@ pipeline:
       event: [ push ] # step only triggers on push events
   ssh-deploy:
     image: appleboy/drone-ssh
+    pull: true
     host: ${HOST}
     user: ${USER}
     port: 22
