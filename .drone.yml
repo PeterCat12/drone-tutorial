@@ -21,7 +21,7 @@ pipeline:
     tag: latest
     file: Dockerfile
     environment:
-      - DOCKER_LAUNCH_DEBUG=true ( # usefull for debugging but not necessary )
+      - DOCKER_LAUNCH_DEBUG=true # usefull for debugging but not necessary )
     when:
       branch: [ master ]
       event: [ push ] # step only triggers on push events
