@@ -15,8 +15,8 @@ pipeline:
       event: [push, pull_request] # trigger step on push and pull events
   publish:
     image: plugins/docker
-    username: $DOCKER_USERNAME  # we will inject your dockerhub username using drone secrets.
-    password: $DOCKER_PASSWORD # we will inject your dockerhub password using drone secrets.
+    username: ${DOCKER_USERNAME}  # we will inject your dockerhub username using drone secrets.
+    password: ${DOCKER_PASSWORD} # we will inject your dockerhub password using drone secrets.
     email: pwensel@gmail.com
     repo: petercat/drone-tutorial
     tag: latest
@@ -28,8 +28,10 @@ pipeline:
       event: [ push ] # step only triggers on push events
   ssh-deploy:
     image: appleboy/drone-ssh
+    pull: true
     host: ${HOST}
     user: ${USER}
+    key: ${SSH_KEY}
     port: 22
     pull: true
     command_timeout: 180
